@@ -1,0 +1,120 @@
+/* ── Global ──────────────────────────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1a1a2e;
+  background: #f8f9fa;
+}
+
+a { color: #e63946; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.loading { display: flex; justify-content: center; align-items: center; height: 100vh; font-size: 1.1rem; }
+
+/* ── Navbar ──────────────────────────────────────── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background: #1a1a2e;
+  color: white;
+}
+.navbar a { color: #fca5a5; margin-right: 1.5rem; font-weight: 500; }
+.navbar a:hover { color: white; text-decoration: none; }
+.navbar button {
+  background: transparent;
+  border: 1px solid #fca5a5;
+  color: #fca5a5;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.navbar button:hover { background: #fca5a5; color: #1a1a2e; }
+
+/* ── Landing ─────────────────────────────────────── */
+.landing { text-align: center; padding: 4rem 2rem; max-width: 700px; margin: 0 auto; }
+.landing h1 { font-size: 2.5rem; color: #e63946; margin-bottom: 0.5rem; }
+.landing .tagline { font-size: 1.2rem; color: #555; margin-bottom: 3rem; }
+.landing .steps { text-align: left; margin: 2rem 0; line-height: 2; }
+.landing .btn { display: inline-block; padding: 0.75rem 2rem; border-radius: 6px; margin: 0.5rem; font-weight: 600; }
+.btn-primary { background: #e63946; color: white; }
+.btn-secondary { background: white; color: #e63946; border: 2px solid #e63946; }
+
+/* ── Forms ────────────────────────────────────────── */
+.form-page { max-width: 480px; margin: 2rem auto; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.form-page h2 { margin-bottom: 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 0.3rem; font-weight: 500; font-size: 0.9rem; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.95rem;
+}
+.form-group textarea { min-height: 80px; resize: vertical; }
+.form-page button[type="submit"] {
+  width: 100%; padding: 0.75rem; background: #e63946; color: white;
+  border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; margin-top: 0.5rem;
+}
+.form-page button[type="submit"]:hover { background: #c1121f; }
+.error-message { color: #e63946; margin-bottom: 1rem; font-size: 0.9rem; }
+.success-message { color: #22c55e; margin-bottom: 1rem; font-size: 0.9rem; }
+
+/* ── Dashboard ───────────────────────────────────── */
+.dashboard { display: flex; height: calc(100vh - 52px); }
+.dashboard-sidebar {
+  width: 380px; overflow-y: auto; padding: 1rem;
+  background: white; border-right: 1px solid #e5e7eb;
+}
+.dashboard-sidebar h2 { margin-bottom: 1rem; }
+.dashboard-map { flex: 1; }
+.filter-bar { margin-bottom: 1rem; }
+.filter-bar input { width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; }
+
+.need-card {
+  padding: 0.75rem; margin-bottom: 0.5rem; border-radius: 6px;
+  border: 1px solid #e5e7eb; cursor: pointer; transition: box-shadow 0.15s;
+}
+.need-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.need-card.selected { border-color: #e63946; box-shadow: 0 0 0 1px #e63946; }
+.need-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
+.urgency-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.need-details { display: flex; flex-wrap: wrap; gap: 0.75rem; font-size: 0.85rem; color: #666; }
+
+.claim-section { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid #eee; }
+.claim-section label { font-size: 0.85rem; display: block; margin-bottom: 0.4rem; }
+.claim-section input { padding: 0.4rem; border: 1px solid #ddd; border-radius: 4px; margin-top: 0.25rem; }
+.claim-section button {
+  margin-top: 0.5rem; padding: 0.5rem 1rem; background: #e63946; color: white;
+  border: none; border-radius: 4px; cursor: pointer; width: 100%;
+}
+.claim-section button:disabled { background: #ccc; cursor: not-allowed; }
+.empty { color: #999; text-align: center; padding: 2rem; }
+
+/* ── Impact / Stats ──────────────────────────────── */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.stat-card {
+  background: white; padding: 1.5rem; border-radius: 8px; text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.stat-card .stat-value { font-size: 2rem; font-weight: 700; color: #e63946; }
+.stat-card .stat-label { font-size: 0.85rem; color: #666; margin-top: 0.25rem; }
+
+/* ── Deliveries ──────────────────────────────────── */
+.deliveries-page { padding: 1.5rem 2rem; max-width: 900px; margin: 0 auto; }
+.delivery-card {
+  background: white; padding: 1rem; margin-bottom: 0.75rem; border-radius: 6px;
+  border: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center;
+}
+
+/* ── Admin ────────────────────────────────────────── */
+.admin-page { padding: 1.5rem 2rem; max-width: 1000px; margin: 0 auto; }
+.org-card {
+  background: white; padding: 1rem; margin-bottom: 0.75rem; border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+.org-card .actions { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
+.org-card .actions button { padding: 0.4rem 1rem; border-radius: 4px; cursor: pointer; border: none; }
+.org-card .actions .approve { background: #22c55e; color: white; }
+.org-card .actions .reject { background: #ef4444; color: white; }
